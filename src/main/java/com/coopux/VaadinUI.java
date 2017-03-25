@@ -2,8 +2,10 @@ package com.coopux;
 
 import com.coopux.Entities.Document;
 import com.coopux.Entities.Llibre;
+import com.coopux.Entities.Tipus;
 import com.coopux.Repositories.DocumentRepository;
 import com.coopux.Repositories.LlibreRepository;
+import com.coopux.Repositories.TipusRepository;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.Grid;
@@ -22,6 +24,9 @@ public class VaadinUI extends UI {
     @Autowired
     LlibreRepository llibreRepository;
 
+    @Autowired
+    TipusRepository tipusRepository;
+
     @Override
     protected void init(VaadinRequest vaadinRequest) {
         VerticalLayout rootLayout = new VerticalLayout();
@@ -38,6 +43,10 @@ public class VaadinUI extends UI {
         gridM.setColumns("codiCenbn", "isbn", "tipus", "titol", "materia", "editor", "comentari");
 
         rootLayout.addComponent(gridM);
+
+        Tipus ejemplo = new Tipus("Fighting");
+        tipusRepository.save(ejemplo);
+
         setContent(rootLayout);
 
     }
