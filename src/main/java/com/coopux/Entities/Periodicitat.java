@@ -1,9 +1,6 @@
 package com.coopux.Entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Enrique Villarreal on 17/03/2017.
@@ -14,10 +11,11 @@ public class Periodicitat {
 
     @Id
     @Column
-    int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @Column
-    String tipus;
+    private String tipus;
 
     public Periodicitat() {
 
