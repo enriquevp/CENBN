@@ -13,6 +13,7 @@ import java.util.Set;
 public abstract class Document {
     @Id
     @Column(name = "codi_cenbn")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codiCenbn;
 
     @Column(length = 100)
