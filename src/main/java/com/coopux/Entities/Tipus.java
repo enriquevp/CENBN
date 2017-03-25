@@ -1,9 +1,6 @@
 package com.coopux.Entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Enrique Villarreal on 17/03/2017.
@@ -14,7 +11,8 @@ import javax.persistence.Table;
 public class Tipus {
     @Id
     @Column
-    int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @Column(name = "tipus", length = 25)
     private String nom;
