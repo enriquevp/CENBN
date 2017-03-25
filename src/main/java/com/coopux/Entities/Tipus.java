@@ -17,7 +17,7 @@ public class Tipus {
     int id;
 
     @Column(name = "tipus", length = 25)
-    String nom;
+    private String nom;
 
     public Tipus() {
 
@@ -45,8 +45,6 @@ public class Tipus {
 
     @Override
     public String toString() {
-        return "Tipus{" +
-                "nom='" + nom + '\'' +
-                '}';
+        return this.nom;
     }
 }
