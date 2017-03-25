@@ -1,9 +1,6 @@
 package com.coopux.Entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by Enrique Villarreal on 17/03/2017.
@@ -14,13 +11,14 @@ public class Autor {
 
     @Id
     @Column
-    int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @Column(length = 60)
-    String nom;
+    private String nom;
 
     @Column
-    String comentari;
+    private String comentari;
 
     public Autor() {
 
