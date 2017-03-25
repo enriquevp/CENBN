@@ -31,9 +31,9 @@ public class Llibre extends Document {
 
     }
 
-    public Llibre(int codiCenbn, String isbn, Materia materia, Editor editor, Set<Idioma> idiomes, Tipus tipus, String anyPublicacio, String edicio, String comentari) {
-        this.setCodiCenbn(codiCenbn);
+    public Llibre(String isbn, String titol, Materia materia, Editor editor, Set<Idioma> idiomes, Tipus tipus, String anyPublicacio, String edicio, String comentari) {
         this.isbn = isbn;
+        this.setTitol(titol);
         this.setMateria(materia);
         this.setEditor(editor);
         this.setIdiomes(idiomes);
