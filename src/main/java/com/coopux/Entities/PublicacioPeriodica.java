@@ -34,9 +34,9 @@ public class PublicacioPeriodica extends Document {
 
     }
 
-    public PublicacioPeriodica(int codiCenbn, String issn, Materia materia, Editor editor, Set<Idioma> idioma, Tipus tipus, Date dataPublicacio, Periodicitat periodicitat, String comentari) {
-        this.setCodiCenbn(codiCenbn);
+    public PublicacioPeriodica(String issn, String titol, Materia materia, Editor editor, Set<Idioma> idioma, Tipus tipus, Date dataPublicacio, Periodicitat periodicitat, String comentari) {
         this.issn = issn;
+        this.setTitol(titol);
         this.setMateria(materia);
         this.setEditor(editor);
         this.setIdiomes(idioma);
@@ -47,5 +47,45 @@ public class PublicacioPeriodica extends Document {
     }
 
 
+    public String getIssn() {
+        return issn;
+    }
 
+    public void setIssn(String issn) {
+        this.issn = issn;
+    }
+
+    public String getLocalitat() {
+        return localitat;
+    }
+
+    public void setLocalitat(String localitat) {
+        this.localitat = localitat;
+    }
+
+    public Date getDataPublicacio() {
+        return dataPublicacio;
+    }
+
+    public void setDataPublicacio(Date dataPublicacio) {
+        this.dataPublicacio = dataPublicacio;
+    }
+
+    public Periodicitat getPeriodicitat() {
+        return periodicitat;
+    }
+
+    public void setPeriodicitat(Periodicitat periodicitat) {
+        this.periodicitat = periodicitat;
+    }
+
+    @Override
+    public String getComentari() {
+        return comentari;
+    }
+
+    @Override
+    public void setComentari(String comentari) {
+        this.comentari = comentari;
+    }
 }
