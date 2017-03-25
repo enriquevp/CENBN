@@ -13,10 +13,11 @@ public class Materia {
 
     @Id
     @Column
-    int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @Column(length = 30)
-    String nom;
+    private String nom;
 
     @OneToMany
     @JoinTable(name = "materia_te_submateria",
@@ -24,10 +25,10 @@ public class Materia {
             inverseJoinColumns = @JoinColumn(name = "submateria", referencedColumnName = "id")
     )
 
-    Set<Materia> materies;
+    private Set<Materia> materies;
 
     @Column
-    String comentari;
+    private String comentari;
 
     public Materia() {
 
