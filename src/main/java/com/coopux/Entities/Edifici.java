@@ -12,14 +12,15 @@ import java.util.Set;
 public class Edifici {
     @Id
     @Column
-    int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @Column(length = 60)
-    String nom;
+    private String nom;
 
     @OneToMany(targetEntity = Sala.class)
     @JoinColumn(name = "edifici")
-    Set<Sala> sales;
+    private Set<Sala> sales;
 
     public Edifici() {
 
