@@ -1,6 +1,7 @@
 package com.coopux.Entities;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Set;
 
 /**
@@ -40,6 +41,14 @@ public abstract class Document {
 
     @Column
     private String comentari;
+
+    public static PublicacioPeriodica createPublicacioPeriodica(String issn, String titol, Materia materia, Editor editor, Set<Idioma> idiomes, Tipus tipus, Date dataPublicacio, Periodicitat periodicitat, String comentari) {
+        return new PublicacioPeriodica(issn, titol, materia, editor, idiomes, tipus, dataPublicacio, periodicitat, comentari);
+    }
+
+    public static Llibre createLlibre(String isbn, String titol, Materia materia, Editor editor, Set<Idioma> idiomes, Tipus tipus, String anyPublicacio, String edicio, String comentari) {
+        return new Llibre(isbn, titol, materia, editor, idiomes, tipus, anyPublicacio, edicio, comentari);
+    }
 
     public int getCodiCenbn() {
         return codiCenbn;
