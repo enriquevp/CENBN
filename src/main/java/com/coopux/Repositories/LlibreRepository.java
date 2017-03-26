@@ -9,17 +9,7 @@ import java.util.List;
 /**
  * Created by Enrique Villarreal on 18/03/2017.
  */
-public interface LlibreRepository extends CrudRepository<Llibre, Long> {
-    List<Llibre> findByTitol(String titol);
-
-    @Query("select l from Llibre l where l.materia.nom = ?1")
-    List<Llibre> findByMateria(String materia);
-
-    @Query("select l from Llibre l where l.editor.nom = ?1")
-    List<Llibre> findByEditor(String editor);
-
-    @Query("select l from Llibre l where l.tipus.nom = ?1")
-    List<Llibre> findByTipus(Tipus tipus);
+public interface LlibreRepository extends DocumentBaseRepository<Llibre> {
     List<Llibre> findByIsbn(String isbn);
     List<Llibre> findByAnyPublicacio(int anyPublicacio);
 }
